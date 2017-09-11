@@ -1,0 +1,16 @@
+<div class="infobar">{{vm.getDate(vm.weather.timestamp)}} {{vm.getTime(vm.weather.timestamp, ':')}}</div>
+<div class="weather-detail">
+    <div class="btn-group center">
+        <div google-autocomplete class="btn btn-default">{{vm.weather.data.city}}</div>
+    </div>
+    <div class="list">
+        <div class="item" ng-repeat="item in vm.weather.data.list">
+            <div class="time">{{item.time}}</div>
+            <div class="info">
+                <div class="temperature">{{item.temperature}}</div>
+                <i class="pe-is-w-{{item.icon}}"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="infobar">Last update: {{vm.getTime(vm.weather.timestamp, ':')}} {{vm.getDate(vm.weather.timestamp)}}</div>

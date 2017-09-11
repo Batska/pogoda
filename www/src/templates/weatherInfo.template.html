@@ -1,0 +1,21 @@
+<div class="infobar">{{vm.getDate(vm.weatherInfo.timestamp)}} {{vm.getTime(vm.weatherInfo.timestamp, ':')}} | {{vm.weatherInfo.data.windSpeed}} m/s, {{vm.weatherInfo.data.humidity}}%, {{vm.weatherInfo.data.pressure}} gPa</div>
+<div class="weather-info">
+    <i class="weather-icon pe-is-w-{{vm.weatherInfo.data.icon}}"></i>
+    <div class="temperature">{{vm.weatherInfo.data.temperature}}</div>
+    <div class="panel">
+        <div>
+            <i class="pe-is-w-wind-cone-f"></i> {{vm.weatherInfo.data.windSpeed}} m/s
+        </div>
+        <div>
+            <i class="pe-is-w-drop-f"></i> {{vm.weatherInfo.data.humidity}}%
+        </div>
+        <div>
+            <i class="pe-is-w-thermometer-3-f"></i> {{vm.weatherInfo.data.pressure}} gPa
+        </div>
+    </div>
+    <div class="btn-group">
+        <div google-autocomplete class="btn btn-default">{{vm.weatherInfo.data.city}}</div>
+        <div ui-sref="detail" class="btn btn-default">Detail</div>
+    </div>
+</div>
+<div class="infobar">Last update: {{vm.getTime(vm.weatherInfo.timestamp, ':')}} {{vm.getDate(vm.weatherInfo.timestamp)}}</div>

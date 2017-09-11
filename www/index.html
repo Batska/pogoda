@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pogoda</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="src/css/style.css">
+        <script src="src/js/libs/angular.min.js"></script>
+        <script src="src/js/libs/angular-ui-router.min.js"></script>
+        <script src="src/js/bundle.js"></script>
+        <script src="cordova.js"></script>
+        <script>
+            angular.element(document).ready(function () {
+                if (window.cordova) {
+                  document.addEventListener('deviceready', function () {
+                    angular.bootstrap(document.body, ['pogoda']);
+                    }, false);
+                }
+                else {
+                    angular.bootstrap(document.body, ['pogoda']);
+                    console.log('bro');
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <header></header>
+
+        <main>
+            <ui-view></ui-view>
+        </main>
+
+        <splash></splash>
+    </body>
+</html>
